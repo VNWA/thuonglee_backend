@@ -4,6 +4,7 @@ use App\Http\Controllers\AccountController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Admin\MediaController;
 use App\Http\Controllers\Admin\AppearanceController;
+use App\Http\Controllers\Backend\ContactController;
 use App\Http\Controllers\Frontend\ClientController;
 use App\Http\Controllers\UploadController;
 use Illuminate\Support\Facades\Route;
@@ -87,7 +88,11 @@ Route::prefix('api/v1')->group(function () {
 
 
             });
-
+            Route::prefix('contact')->group(function () {
+                Route::get('load-data', [ContactController::class, 'loadData']);
+                Route::get('view/{id}', [ContactController::class, 'view']);
+                Route::post('delete', [ContactController::class, 'delete']);
+            });
 
         });
 
