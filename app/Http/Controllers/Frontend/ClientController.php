@@ -21,13 +21,10 @@ class ClientController extends Controller
 
 
         return response()->json([
-            'data' => [
-                'logo_full' => $appLogo['logo_full'],
-                'logo_icon' => $appLogo['logo_icon'],
-                'favicon' => $appLogo['favicon'],
-                'profile' => $appProfile
-            ],
-            'message' => 'Success'
+            'logo_full' => $appLogo['logo_full'],
+            'logo_icon' => $appLogo['logo_icon'],
+            'favicon' => $appLogo['favicon'],
+            'profile' => $appProfile
         ], 200);
     }
 
@@ -42,31 +39,31 @@ class ClientController extends Controller
     {
         $app = Appearance::where('type', 'home_page')->first();
         $data = $app->value;
-        return response()->json(['data' => $data, 'message' => 'Load Data Home Page Success'], 200);
+        return response()->json($data, 200);
     }
     public function loadDataGalleryPage()
     {
         $app = Appearance::where('type', 'gallery_page')->first();
         $data = $app->value;
-        return response()->json(['data' => $data, 'message' => 'Load Data Gallery Page Success'], 200);
+        return response()->json($data, 200);
     }
     public function loadDataServicesPage()
     {
         $app = Appearance::where('type', 'services_page')->first();
         $data = $app->value;
-        return response()->json(['data' => $data, 'message' => 'Load Data Courses Page Success'], 200);
+        return response()->json($data, 200);
     }
     public function loadDataCoursesPage()
     {
         $app = Appearance::where('type', 'courses_page')->first();
         $data = $app->value;
-        return response()->json(['data' => $data, 'message' => 'Load Data Courses Page Success'], 200);
+        return response()->json($data, 200);
     }
     public function loadDataAboutPage()
     {
         $app = Appearance::where('type', 'about_page')->first();
         $data = $app->value;
-        return response()->json(['data' => $data, 'message' => 'Load Data About Page Success'], 200);
+        return response()->json($data, 200);
     }
 
 
