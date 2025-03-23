@@ -99,6 +99,7 @@ Route::prefix('api/v1')->group(function () {
 
     });
 
+    Route::get('test', [ClientController::class, 'test']);
     Route::get('load-data-layout', [ClientController::class, 'loadDataLayout']);
     Route::get('load-data-home-page', [ClientController::class, 'loadDataHomePage']);
     Route::get('load-data-gallery-page', [ClientController::class, 'loadDataGalleryPage']);

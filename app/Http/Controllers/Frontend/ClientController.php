@@ -32,6 +32,12 @@ class ClientController extends Controller
     }
 
 
+    public function test()
+    {
+        $app = Appearance::where('type', 'home_page')->first();
+        $data = $app->value;
+        return response()->json($data, 200);
+    }
     public function loadDataHomePage()
     {
         $app = Appearance::where('type', 'home_page')->first();
